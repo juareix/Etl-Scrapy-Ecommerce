@@ -1,4 +1,4 @@
-# Scrapy settings for olx_scraper project
+# Scrapy settings for Scraper_Mercado_livre project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,16 +7,21 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "olx_scraper"
+BOT_NAME = "Scraper_Mercado_livre"
 
-SPIDER_MODULES = ["olx_scraper.spiders"]
-NEWSPIDER_MODULE = "olx_scraper.spiders"
+SPIDER_MODULES = ["Scraper_Mercado_livre.spiders"]
+NEWSPIDER_MODULE = "Scraper_Mercado_livre.spiders"
 
 ADDONS = {}
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
+#USER_AGENT = "Scraper_Mercado_livre (+http://www.yourdomain.com)"
+
+DEFAULT_REQUEST_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+}
+
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -38,22 +43,16 @@ DOWNLOAD_DELAY = 1
 #    "Accept-Language": "en",
 #}
 
-DEFAULT_REQUEST_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36',
-    'Accept-Language': 'pt-BR,pt;q=0.9',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-}
-
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "olx_scraper.middlewares.OlxScraperSpiderMiddleware": 543,
+#    "Scraper_Mercado_livre.middlewares.ScraperMercadoLivreSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "olx_scraper.middlewares.OlxScraperDownloaderMiddleware": 543,
+#    "Scraper_Mercado_livre.middlewares.ScraperMercadoLivreDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +64,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "olx_scraper.pipelines.OlxScraperPipeline": 300,
+#    "Scraper_Mercado_livre.pipelines.ScraperMercadoLivrePipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
